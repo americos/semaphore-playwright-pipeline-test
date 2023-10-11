@@ -10,6 +10,7 @@ blocks:
       jobs:
         - name: Playwright Setup
           commands:
+            - checkout
             - echo '--> OK lets setup Playwright'
             # - echo '--> Pulling playwright image'
             # - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
