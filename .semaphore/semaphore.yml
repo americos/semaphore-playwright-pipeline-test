@@ -17,5 +17,5 @@ blocks:
             - echo '--> Running playwright container'
             - container_id=$(docker run -td -v ./e2e/:/e2e/ mcr.microsoft.com/playwright:v1.38.1-jammy)
             - echo '--> Running tests'
-            - docker exec "$container_id" sh -c "cd e2e && npm install && npx playwright test"
+            - docker exec "$container_id" sh -c "ls -la && cd e2e && npm install && npx playwright test"
             
