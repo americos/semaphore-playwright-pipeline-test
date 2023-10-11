@@ -12,3 +12,5 @@ blocks:
           commands:
             - echo '--> OK lets setup Playwright'
             - ls -la
+            - node -v
+            - npm -v
