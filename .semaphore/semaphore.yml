@@ -11,7 +11,8 @@ blocks:
         - name: Playwright Setup
           commands:
             - echo '--> OK lets setup Playwright'
-            - echo '--> Pulling playwright image'
-            - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
+            # - echo '--> Pulling playwright image'
+            # - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
+            - ls -la
             - echo '--> npm install'
             - npm install

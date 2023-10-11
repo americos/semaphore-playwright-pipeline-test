@@ -1,0 +1,15 @@
+{
+  "name": "semaphore-playwright-pipeline-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Americo Savinon",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.38.1",
+    "playwright": "^1.38.1"
+  }
+}
