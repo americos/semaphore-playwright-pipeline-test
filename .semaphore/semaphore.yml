@@ -14,8 +14,8 @@ blocks:
             - echo '--> OK lets setup Playwright'
             - echo '--> Pulling playwright image'
             - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
-            - ls -la
-            - echo '--> npm install'
-            - npm install
+            - echo '--> Running playwright container'
+            - container_id=$(docker run -td -v ./e2e/:/e2e/ mcr.microsoft.com/playwright:v1.38.1-jammy)
             - echo '--> Running tests'
-            - npx playwright test example.spec.ts
+            - docker exec "$container_id" sh -c "cd e2e && npm install && npx playwright test"
+            
