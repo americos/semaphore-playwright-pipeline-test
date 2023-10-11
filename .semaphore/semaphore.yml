@@ -4,11 +4,13 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-
 blocks:
-  - name: Deployment
+  - name: Playwright Init
     task:
-     jobs:
-        - name: Running Playwright
+      jobs:
+        - name: Playwright Setup
           commands:
-            - echo '--> OK this is playwright'
+            - echo '--> OK lets setup Playwright'
+            - echo '--> Pulling playwright image'
+            - 'docker pull mcr.microsoft.com/playwright:v1.38.1-jammy'
+            - echo '--> Playwright image pulled'
