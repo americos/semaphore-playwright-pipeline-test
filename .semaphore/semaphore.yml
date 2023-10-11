@@ -11,6 +11,4 @@ blocks:
         - name: Playwright Setup
           commands:
             - echo '--> OK lets setup Playwright'
-            - echo '--> Pulling playwright image'
-            - 'docker pull mcr.microsoft.com/playwright:v1.38.1-jammy'
-            - echo '--> Playwright image pulled'
+            - ls -la
