@@ -3,7 +3,7 @@ name: Playwright Tests
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+    os_image: ubuntu2004
 blocks:
   - name: Playwright Init
     task:
@@ -11,6 +11,8 @@ blocks:
         - name: Playwright Setup
           commands:
             - checkout
+            - echo '--> apt-get update'
+            - apt-get update && apt-get install -y --no-install-recommends git && apt-get clean 
             - echo '--> OK lets setup Playwright'
             - echo '--> Pulling playwright image'
             - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
