@@ -11,4 +11,4 @@ blocks:
      jobs:
         - name: Running Playwright
           commands:
-            - echo '--> OK this is playwright.yml'
+            - echo '--> OK this is playwright'
