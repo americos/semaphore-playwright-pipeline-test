@@ -7,6 +7,8 @@ agent:
 blocks:
   - name: Playwright Init
     task:
+      secrets:
+        - name: BUILDKITE_API_KEY_AMERICO
       jobs:
         - name: Calling Buildkite Playwright Pipeline
           commands:
@@ -27,5 +29,3 @@ blocks:
                   "americo": "savinon from semaphore"
                 }
               }'
-      secrets:
-        - name: BUILDKITE_API_KEY_AMERICO
