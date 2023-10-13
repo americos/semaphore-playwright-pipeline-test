@@ -11,7 +11,9 @@ blocks:
         - name: Calling Buildkite Playwright Pipeline
           commands:
             - echo '--> Making Buildite API call'
-            - |-
-              curl -X POST "https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds" \ -H "Content-Type: application/json" \ -H 'Authorization: Bearer "${BUILDKITE_API_KEY_AMERICO}"' -d '{ "commit": "HEAD", "branch": "chore-run-playwright-after-hprod", "message": "Calling buildkite pipeline from Semaphore", "author": { "name": "Americo Savinon", "email": "americo.savinon.ext@hivebrite.com" }, "env": { "americo": "rivera" } }'
+            - curl "https://api.buildkite.com/${deleteme}"
+            # - |-
+            #   curl -X POST "https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds" \ -H "Content-Type: application/json" \ -H 'Authorization: Bearer "${BUILDKITE_API_KEY_AMERICO}"' -d '{ "commit": "HEAD", "branch": "chore-run-playwright-after-hprod", "message": "Calling buildkite pipeline from Semaphore", "author": { "name": "Americo Savinon", "email": "americo.savinon.ext@hivebrite.com" }, "env": { "americo": "rivera" } }'
       secrets:
-        - name: BUILDKITE_API_KEY_AMERICO
+        # - name: BUILDKITE_API_KEY_AMERICO
+          - name: deleteme
