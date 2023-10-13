@@ -14,9 +14,9 @@ blocks:
           commands:
             - echo '--> Making Buildite API call'
             - >-
-              curl --location 'https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds' \
-              --header 'Content-Type: application/json' \
-              --header 'Authorization: Bearer "${BUILDKITE_API_KEY_AMERICO}"' \
+              curl --location 'https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds'
+              --header 'Content-Type: application/json'
+              --header 'Authorization: Bearer "${BUILDKITE_API_KEY_AMERICO}"'
               --data-raw '{
                 "commit": "HEAD",
                 "branch": "chore-run-playwright-after-hprod",
