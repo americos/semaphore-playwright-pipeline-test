@@ -28,6 +28,6 @@ blocks:
                   "email": "americo.savinon.ext@hivebrite.com"
                 },
                 "env": {
-                  "americo": "savinon from semaphore"
+                  "RUN_PLAYRIGHT_TESTS": "true"
                 }
               }'
