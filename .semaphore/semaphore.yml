@@ -8,15 +8,20 @@ blocks:
   - name: Playwright Init
     task:
       jobs:
-        - name: Playwright Setup
+        # - name: Playwright Setup
+        #   commands:
+        #     - checkout
+        #     - echo '--> Pulling playwright image'
+        #     - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
+        #     - echo '--> Running playwright container'
+        #     - container_id=$(docker run -td -v ./e2e/:/e2e/ mcr.microsoft.com/playwright:v1.38.1-jammy)
+        #     - echo '--> Running tests'
+        #     # NOTE: We need to remove libsoup2.4 because it creates an error with libsoup3 on playwright:v1.38.1-jammy
+        #     # more info in: https://github.com/microsoft/playwright/issues/27313
+        #     - docker exec "$container_id" sh -c "apt-get remove -y libsoup2.4 && cd e2e && npm install && npx playwright test"
+        - name: Calling Buildkite Playwright Pipeline
           commands:
-            - checkout
-            - echo '--> Pulling playwright image'
-            - docker pull mcr.microsoft.com/playwright:v1.38.1-jammy
-            - echo '--> Running playwright container'
-            - container_id=$(docker run -td -v ./e2e/:/e2e/ mcr.microsoft.com/playwright:v1.38.1-jammy)
-            - echo '--> Running tests'
-            # NOTE: We need to remove libsoup2.4 because it creates an error with libsoup3 on playwright:v1.38.1-jammy
-            # more info in: https://github.com/microsoft/playwright/issues/27313
-            - docker exec "$container_id" sh -c "apt-get remove -y libsoup2.4 && cd e2e && npm install && npx playwright test"
+            - echo '--> Making Buildite API call'
+            - curl https://api.buildkite.com
+
             
