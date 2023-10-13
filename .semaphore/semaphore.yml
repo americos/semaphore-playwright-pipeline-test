@@ -13,21 +13,21 @@ blocks:
         - name: Calling Buildkite Playwright Pipeline
           commands:
             - echo '--> Making Buildite API call'
-            - >-
-              curl --location "https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds/58975" --header "Authorization: Bearer ${BUILDKITE_API_KEY_AMERICO}"
             # - >-
-            #   curl --location 'https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds'
-            #   --header 'Content-Type: application/json'
-            #   --header 'Authorization: Bearer "${BUILDKITE_API_KEY_AMERICO}"'
-            #   --data-raw '{
-            #     "commit": "HEAD",
-            #     "branch": "chore-run-playwright-after-hprod",
-            #     "message": ":rocket: Build initiated from Semaphore :rocket:",
-            #     "author": {
-            #       "name": "Americo Savinon",
-            #       "email": "americo.savinon.ext@hivebrite.com"
-            #     },
-            #     "env": {
-            #       "americo": "savinon from semaphore"
-            #     }
-            #   }'
+            #   curl --location "https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds/58975" --header "Authorization: Bearer ${BUILDKITE_API_KEY_AMERICO}"
+            - >-
+              curl --location "https://api.buildkite.com/v2/organizations/hivebrite/pipelines/alumni-connect/builds"
+              --header "Content-Type: application/json"
+              --header "Authorization: Bearer ${BUILDKITE_API_KEY_AMERICO}"
+              --data-raw '{
+                "commit": "HEAD",
+                "branch": "chore-run-playwright-after-hprod",
+                "message": ":rocket: Build initiated from Semaphore :rocket:",
+                "author": {
+                  "name": "Americo Savinon",
+                  "email": "americo.savinon.ext@hivebrite.com"
+                },
+                "env": {
+                  "americo": "savinon from semaphore"
+                }
+              }'
