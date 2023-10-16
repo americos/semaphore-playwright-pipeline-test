@@ -20,12 +20,13 @@ blocks:
               --data-raw '{
                 "commit": "HEAD",
                 "branch": "chore-run-playwright-after-hprod",
-                "message": ":rocket: Build initiated from Semaphore :rocket:",
+                "message": ":playwright: Playwright tests after hprod deployment (just a test)",
                 "author": {
-                  "name": "Americo Savinon",
-                  "email": "americo.savinon.ext@hivebrite.com"
+                  "name": "hivebrite-svc-automation",
+                  "email": "svc-automation@hivebrite.com"
                 },
                 "env": {
-                  "RUN_PLAYRIGHT_TESTS": "true"
+                  "PLAYWRIGHT_RUN_TESTS": "true",
+                  "PLAYWRIGHT_TEST_CMD": ""
                 }
               }'
