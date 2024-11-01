@@ -1,3 +1,4 @@
+# This file is a part of the Semaphore configuration for the Playwright tests.
 version: v1.0
 name: Playwright Tests
 agent:
